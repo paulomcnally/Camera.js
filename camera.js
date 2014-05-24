@@ -17,7 +17,7 @@ hilink.listInbox(function( response ){
 
                 hilink.delete( id, function( status ){
 
-                    if( status == "OK" ){
+                    if( status.response == "OK" ){
 
                         console.log( text );
 
