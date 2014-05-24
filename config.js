@@ -6,4 +6,4 @@ var Config = function(){
 
 }
 
-models.exports = new Config();
+module.exports = new Config();
