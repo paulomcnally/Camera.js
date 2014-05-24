@@ -29,11 +29,7 @@ hilink.listInbox(function( response ){
 
                                 var emailMessage = config.email.message;
 
-                                setTimeout( function(){
-
-                                    server.send(emailMessage, function(err, message) { console.log(err || message); });
-
-                                }, 3000 );
+                                server.send(emailMessage, function(err, message) { console.log(err || message); });
 
                             });
 

@@ -28,7 +28,7 @@ var Config = function(){
             subject: "Picture from Security Camera",
             attachment:
                 [
-                    {path:"/home/pi/sites/camera.jpeg", type:"image/jpeg", name:"camera.jpe"}
+                    {path:"/home/pi/sites/camera/camera.jpeg", type:"image/jpeg", name:"camera.jpe"}
                 ]
         }
 
