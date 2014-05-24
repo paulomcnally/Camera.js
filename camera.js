@@ -1,7 +1,6 @@
 var hilink = require('hilink');
 var config = require('./config');
 
-
 hilink.listInbox(function( response ){
 
     if( response["response"]["Count"][0] > 0 ){
@@ -14,24 +13,22 @@ hilink.listInbox(function( response ){
 
             var text = sms["Message"][0]["Content"][0];
 
-
             if( config.numbers.indexOf( phone ) ){
-
-
 
                 hilink.delete( id, function( status ){
 
-                    console.log( status );
+                    if( status == "OK" ){
 
-                    console.log( text );
+                        console.log( text );
+
+                    }
 
                 });
 
             }
 
-
-
         });
 
     }
+
 });
