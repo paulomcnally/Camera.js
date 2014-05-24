@@ -25,7 +25,7 @@ hilink.listInbox(function( response ){
 
                         if( text.match(/camera/g) ){
 
-                            childProcess.exec('fswebcam -p YUYV camera.jpeg', function (error, stdout, stderr) {
+                            childProcess.exec('fswebcam -r 800x600 -p YUYV camera.jpeg', function (error, stdout, stderr) {
 
                                 var emailMessage = config.email.message;
 
