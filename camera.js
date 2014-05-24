@@ -1,5 +1,9 @@
 var hilink = require('hilink');
+var childProcess = require('child_process');
 var config = require('./config');
+var email = require('emailjs');
+
+var server  = email.server.connect( config.email.settings );
 
 hilink.listInbox(function( response ){
 
@@ -19,7 +23,17 @@ hilink.listInbox(function( response ){
 
                     if( status.response == "OK" ){
 
-                        console.log( text );
+                        if( text.match(/camera/g) ){
+
+                            childProcess.exec('fswebcam -p YUYV camera.jpeg', function (error, stdout, stderr) {
+
+                                var emailMessage = config.email.message;
+
+                                server.send(emailMessage, function(err, message) { console.log(err || message); });
+
+                            });
+
+                        }
 
                     }
 

@@ -2,6 +2,8 @@
   "name": "polin-camera",
   "version": "0.0.1",
   "dependencies": {
-    "hilink": "0.0.1"
+    "emailjs": "^0.3.8",
+    "hilink": "0.0.1",
+    "nodemailer": "^0.6.5"
   }
 }
